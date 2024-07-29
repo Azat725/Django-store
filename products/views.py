@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from requests import request
 
-# Create your views here.
 def index(request):
-    return render(request, 'products/index.html')
+    context = {
+        "title": "Magazine",
+        "is_promition": False,
+    }
+    return render(request, 'products/index.html', context)
 
 def products(request):
     return render(request, 'products/products.html')
